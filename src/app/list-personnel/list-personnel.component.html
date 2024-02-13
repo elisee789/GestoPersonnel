@@ -1,0 +1,29 @@
+
+<table *ngIf="personnels.length > 0">
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Date de naissance</th>
+        <th>matricule</th>
+        <th>email</th>
+
+    </tr>
+
+    <tr *ngFor="let personnel of personnels">
+        <td>{{personnel.nom}}</td>
+        <td>{{personnel.prenom}}</td>
+        <td>{{personnel.dateNaissance}}</td>
+        <td>{{personnel.matricule}}</td>
+        <td>{{personnel.email}}</td>
+    </tr>
+</table>
+<!-- <div *ngIf="personnels.length== 0">
+    <p> Aucune data</p>
+</div> -->
+<!-- <div *ngFor="let personnel of personnels">
+    <p>{{personnel.nom}}</p>
+    <p>{{personnel.prenom}}</p>
+    <p>{{personnel.dateNaissance}}</p>
+    <p>{{personnel.matricule}}</p>
+    <p>{{personnel.email}}</p>
+</div> -->

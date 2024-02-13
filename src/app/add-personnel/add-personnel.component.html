@@ -1,0 +1,46 @@
+<div class="form-card">
+    <h2>NOUVEAU PERSONNEL</h2>
+    <form [formGroup]="personnelForm">
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input id="nom" type="text" formControlName="nom">
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prenom</label>
+            <input id="prenom" type="text" formControlName="prenom">
+        </div>
+        <div class="form-group">
+            <label for="date">Date de naissance:</label>
+            <input id="date" type="date" formControlName="dateNaissance">
+        </div>
+        <div class="form-group">
+            <label for="matricule">Matricule</label>
+            <input id="matricule" type="text" formControlName="matricule">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="fonction">Fonction</label>
+            <select  name="fonction_id" id="">
+                <option value="">--Fonction--</option>
+                <option *ngFor="let fonction of fonctions" [value]="fonction.id">{{fonction.libelle}}</option>  
+            </select>
+            <!-- <input id="email" type="email" formControlName="email"> -->
+        </div>
+      
+        <div class="action-buttons">
+            <button type="submit" (click)="onSubmitForm()" [disabled]="personnelForm.invalid" >Enregistrer</button>
+        </div>
+    
+    </form>
+</div>
+<!-- <div class="face-snap-card" *ngIf="faceSnapPreview$ | async as faceSnap">
+    <h2>{{ faceSnap.title | uppercase }}</h2>
+    <p>Mis en ligne {{ faceSnap.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>{{ faceSnap.description }}</p>
+    <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
+</div> -->
+
